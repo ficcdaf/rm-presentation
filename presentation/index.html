@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Defeating Real-Time Phishing with Sound-Based Authentication</title>
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<!-- Theme used for syntax highlighted code -->
+<link rel="stylesheet" href="plugin/highlight/zenburn.min.css" id="highlight-theme"></head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<section data-markdown  ><textarea data-template>
+[comment]: # "markdown: { smartypants: true }"
+
+# Defeating Real-Time Phishing with Sound-Based Authentication
+
+Daniel Fichtinger
+
+Supervisors: Dr. Furkan Alaca & Dr. Mohammed Zulkernine
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## What Is Authentication?
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## What Is Authentication?
+
+- Bob **claims** to be Bob.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## What Is Authentication?
+
+- Bob **claims** to be Bob.
+- Alice asks Bob for **proof**.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## What Is Authentication?
+
+- Bob **claims** to be Bob.
+- Alice asks Bob for **proof**.
+- Alice **verifies** the proof.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## What Is Authentication?
+
+- Bob **claims** to be Bob.
+- Alice asks Bob for **proof**.
+- Alice **verifies** the proof.
+- Alice **authenticates** Bob.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Types Of Authentication
+
+### Knowledge
+
+What you know.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Types Of Authentication
+
+### Possession
+
+What you have.
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Types Of Authentication
+
+### Inherence
+
+What you are.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Why aren't passwords good enough?
+
+Imagine the following scenarios:
+
+- Data breach
+- Password guessing
+- Password theft by fake website
+  - This is called _phishing_!
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Multi Factor Authentication
+
+- Combines **Knowledge** and **Possession**
+- Vulnerable to real-time phishing
+  - Attacker may steal both your password _and_ your SMS code, for example!
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Passwordless Authentication
+
+- Combines **Inherence** and **Possession**
+  - **FIDO** with biometric local authentication.
+- Not _technically_ vulnerable to real-time phishing
+  - The _private key_ never leaves your device; impossible to intercept!
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Sound-Proof
+
+A unique, _sound-based_ MFA protocol.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### Client-Server Implementation
+
+</textarea></section>
+<section data-markdown  data-background-image="media/Soundproof-Page-1.svg" data-background-size="contain"><textarea data-template>
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### Peer-to-Peer Implementation
+
+</textarea></section>
+<section data-markdown  data-background-image="media/Soundproof-Page-2.svg" data-background-size="contain"><textarea data-template>
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### Microphone-Spoofing Phishing Attack
+
+_An attack designed by me. To the best of my knowledge, it is **novel**._
+
+</textarea></section>
+<section data-markdown  data-background-image="media/cringe.svg" data-background-size="contain"><textarea data-template>
+
+</textarea></section>
+<section data-markdown  data-background-image="media/Soundproof-Page-3.svg" data-background-size="contain"><textarea data-template>
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Related Papers
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### Sound-Proof
+
+N. Karapanos, C. Marforio, C. Soriente, and S. Capkun, “{Sound-Proof}: Usable {Two-Factor} Authentication Based on Ambient Sound,” presented at the 24th USENIX Security Symposium (USENIX Security 15), 2015, pp. 483–498. Accessed: Nov. 19, 2024. \[Online\]. Available: https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/karapanos
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### SoundID
+
+D. Liu et al., “SoundID: Securing Mobile Two-Factor Authentication via Acoustic Signals,” IEEE Transactions on Dependable and Secure Computing, vol. 20, no. 2, pp. 1687–1701, Mar. 2023, doi: 10.1109/TDSC.2022.3162718.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Research Objective
+
+- To investigate whether:
+  - A Sound-Based authentication protocol can resist phishing.
+- If so:
+  - Does it provide a security benefit over FIDO?
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Research Questions
+
+- **RQ1**: Does the phishing attack against the peer-to-peer Sound-Proof protocol require more complexity than the phishing attack against the server-client protocol?
+  - Are they different attacks?
+  - Will the same defense work against both?
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Research Questions
+
+<div style="font-size: 0.5em;">
+
+- **RQ1**: Does the phishing attack against the peer-to-peer Sound-Proof protocol require more complexity than the phishing attack against the server-client protocol?
+
+</div>
+
+- **RQ2**: Is the only way to address the phishing problem by converging towards the FIDO protocol?
+  - Can we stop the attack _without_ relying on a **secure local channel** (hallmark of FIDO)?
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Research Questions
+
+<div style="font-size: 0.5em;">
+
+- **RQ1**: Does the phishing attack against the peer-to-peer Sound-Proof protocol require more complexity than the phishing attack against the server-client protocol?
+- **RQ2**: Is the only way to address the phishing problem by converging towards the FIDO protocol?
+
+</div>
+
+- **RQ3a**: If a non-FIDO solution exists, then what makes sound a good defense against phishing?
+  - Does the sound mechanism grant a unique security characteristic?
+
+</textarea></section>
+<section data-markdown  data-auto-animate><textarea data-template>
+
+## Research Questions
+
+<div style="font-size: 0.5em;">
+
+- **RQ1**: Does the phishing attack against the peer-to-peer Sound-Proof protocol require more complexity than the phishing attack against the server-client protocol?
+- **RQ2**: Is the only way to address the phishing problem by converging towards the FIDO protocol?
+- **RQ3a**: If a non-FIDO solution exists, then what makes sound a good defense against phishing?
+
+</div>
+
+- **RQ3b**: If only a FIDO solution exists, then does adding sound **improve** on FIDO?
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+## Methodology
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### RQ1: Is the P2P attack more complex?
+
+1. Prove that my attack is novel.
+2. Map out both versions of the attack.
+3. Compare their complexity.
+4. Implement the attack to prove that it works.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### RQ2: Is the FIDO way the only way?
+
+1. Enumerate possible improvements to the protocol that do **not** converge towards FIDO.
+2. If one is found, implement to prove its validity.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### RQ2: Is the FIDO way the only way?
+
+1. If not found, repeat the same process, find an improved protocol that **does** converge towards FIDO.
+2. Implement to prove its validity.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### RQ3a: What makes sound a good defense against phishing?
+
+#### If a non-FIDO solution exists:
+
+- Implement an attack that:
+  - Works against another MFA scheme.
+  - **Doesn't** work against the sound scheme.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### RQ3b: How does sound improve FIDO?
+
+#### If only a FIDO solution exists:
+
+- Implement an attack that:
+  - Works against FIDO.
+  - **Doesn't** works against the sound scheme.
+
+</textarea></section>
+<section data-markdown ><textarea data-template>
+
+## In Conclusion
+
+If security is bad, hackers win.
+
+My research aims to make security better, so hackers lose.
+
+Thank you!
+</textarea></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+Reveal.initialize({
+controls : false,
+markdown : {smartypants: true},
+controls : true,
+keyboard : true,
+hash : false,
+respondToHashChanges : false,
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
