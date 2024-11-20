@@ -8,7 +8,7 @@
 
 # Defeating Real-Time Phishing with Sound-Based Authentication
 
-Daniel Fichtinger
+Daniel Fichtinger, MSc. Candidate
 
 Supervisors: Dr. Furkan Alaca & Dr. Mohammed Zulkernine
 
@@ -44,7 +44,7 @@ Supervisors: Dr. Furkan Alaca & Dr. Mohammed Zulkernine
 - Bob **claims** to be Bob.
 - Alice asks Bob for **proof**.
 - Alice **verifies** the proof.
-- Alice **authenticates** Bob.
+- ∴ Alice **authenticates** Bob.
 
 [comment]: # "!!! data-auto-animate"
 
@@ -76,27 +76,32 @@ What you are.
 
 Imagine the following scenarios:
 
-- Data breach
-- Password guessing
-- Password theft by fake website
-  - This is called _phishing_!
+- Data breach → Password theft
+- Weak password → Password guessing
+
+[comment]: # "!!!"
+
+## Phishing
+
+Attacker steals a password by _tricking_ the user into typing it in on a **fake website** that _looks_ real.
 
 [comment]: # "!!!"
 
 ## Multi Factor Authentication
 
 - Combines **Knowledge** and **Possession**
-- Vulnerable to real-time phishing
-  - Attacker may steal both your password _and_ your SMS code, for example!
+  - Vulnerable to real-time phishing
+    - **RTP**: _Both factors are phished at once, in real-time._
 
 [comment]: # "!!!"
 
 ## Passwordless Authentication
 
 - Combines **Inherence** and **Possession**
-  - **FIDO** with biometric local authentication.
-- Not _technically_ vulnerable to real-time phishing
-  - The _private key_ never leaves your device; impossible to intercept!
+  - **FIDO**: The crown jewel of pw-less authentication.
+  - Not vulnerable to **real-time phishing**.
+    - The private key is _impossible to intercept_ as it never **leaves** the device.
+  - Other attacks possible.
 
 [comment]: # "!!!"
 
